@@ -2,7 +2,7 @@ from TestCase import TestCase
 from Country import Country
 
 
-class FileReader:
+class FileEditor:
 
     def __init__(self, input_file, output_file):
         self.data = []
