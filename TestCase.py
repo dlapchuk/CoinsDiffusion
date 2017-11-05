@@ -15,6 +15,3 @@ class TestCase:
         land.set_test_case(self)
         land.create_land()
         return land.solve()
-
-    def write_result(self):
-        pass
