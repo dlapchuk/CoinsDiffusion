@@ -5,6 +5,7 @@ class City:
         self.INITIAL_COINS_VALUE = 1000000
         self.country = country
         self.init_coins_amount(test_case)
+        self.INITIAL_COINS_VALUE = 1000000
 
     def init_coins_amount(self, test_case):
 
