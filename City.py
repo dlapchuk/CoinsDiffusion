@@ -2,13 +2,15 @@ class City:
     def __init__(self, country, test_case):
         self.coins_amount = {}
         self.coins_changes = {}
+        self.INITIAL_COINS_VALUE = 1000000
         self.country = country
         self.init_coins_amount(test_case)
 
     def init_coins_amount(self, test_case):
+
         for country in test_case.countries:
             if country == self.country:
-                self.coins_amount[country.name] = 1000000
+                self.coins_amount[country.name] = self.INITIAL_COINS_VALUE
             else:
                 self.coins_amount[country.name] = 0
             self.coins_changes[country.name] = 0

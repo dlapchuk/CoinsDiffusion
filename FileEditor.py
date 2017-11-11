@@ -20,24 +20,20 @@ class FileEditor:
     def set_country(self):
         test_cases = []
         i = 1
-        num = int(self.data[0])
-        while num != 0:
+        file_word = int(self.data[0])
+        while file_word != 0:
             test_case = TestCase()
-            for j in range(0, num):
+            for j in range(0, file_word):
                 country = Country()
                 country.name = self.data[i]
-                i += 1
-                country.x_min = int(self.data[i])
-                i += 1
-                country.y_min = int(self.data[i])
-                i += 1
-                country.x_max = int(self.data[i])
-                i += 1
-                country.y_max = int(self.data[i])
-                i += 1
+                country.set_x_min(int(self.data[i+1]))
+                country.set_y_min(int(self.data[i+2]))
+                country.set_x_max(int(self.data[i+3]))
+                country.set_y_max(int(self.data[i+4]))
+                i += 5
                 test_case.add_country(country)
             test_cases.append(test_case)
-            num = int(self.data[i])
+            file_word = int(self.data[i])
             i += 1
         return test_cases
 

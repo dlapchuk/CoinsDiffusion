@@ -65,16 +65,16 @@ class Land:
                             self.make_transaction(self.land[i][j], self.land[i][j+1])
 
         for country in self.test_case.countries:
-            full = True
+            full_first_time = True
             for j in range(country.x_min-1, country.x_max):
                 for i in range(country.y_min-1, country.y_max):
-                        self.land[i][j].change_coins_amount()
-                        if not self.is_country_full_dict[country.name]:
-                            if full:
-                                full = self.land[i][j].check_exit()
-                        else:
-                            full = False
-            if full:
+                    self.land[i][j].change_coins_amount()
+                    if not self.is_country_full_dict[country.name]:
+                        if full_first_time:
+                            full_first_time = self.land[i][j].check_exit()
+                    else:
+                        full_first_time = False
+            if full_first_time:
                 self.results[country.name] = counter
                 self.is_country_full_dict[country.name] = True
 
