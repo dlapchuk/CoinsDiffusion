@@ -3,8 +3,8 @@ from City import City
 
 class Land:
     def __init__(self):
-        self.width = 0
-        self.height = 0
+        self.width = 10
+        self.height = 10
         self.land = ()
         self.test_case = None
         self.solved = False
@@ -16,15 +16,7 @@ class Land:
         for country in test_case.countries:
             self.is_country_full_dict[country.name] = False
 
-    def define_size(self):
-        for country in self.test_case.countries:
-            if country.x_max > self.width:
-                self.width = country.x_max + 1
-            if country.y_max > self.height:
-                self.height = country.y_max + 1
-
     def create_land(self):
-        self.define_size()
         self.land = [[0 for x in range(self.width)] for y in range(self.height)]
         for country in self.test_case.countries:
             for i in range(country.x_min, country.x_max+1):
